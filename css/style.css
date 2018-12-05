@@ -1,0 +1,23 @@
+/*
+
+*/
+#main{
+  margin: 0 auto;
+  width: 30%;
+}
+.solid{
+  border-style: groove;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.form-control-item{
+  border-radius: 30px;
+}
+
+#show_output{
+	width: 30%;
+	margin: 0 auto;
+	background-color: green;
+	color: white;
+	font-weight: 100px;
+}

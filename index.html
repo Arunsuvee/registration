@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validations</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="main" class="solid">
+		<div class="registration-form">
+		    <form onload="onload()">
+		        <h3 class="text-center" style="margin-left: -16px;">Registration</h3>
+		        <div class="form-group">
+		        	<div class="row">
+			        	<label>Email Id:</label>
+			            <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row">
+			        	<label>Username:</label>
+			            <input class="form-control item" type="text" name="username" maxlength="15" minlength="4"   id="username" placeholder="Username" required>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row">
+		        		<label>Password:</label>
+		                <input class="form-control item" type="password" name="password" minlength="6" id="password" placeholder="Password" required>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row">
+		        		<label>Confirm Password:</label>
+		                <input class="form-control item" type="password" name="Confirm password" minlength="6" id="confirm_password" placeholder="Confirm Password" required>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row">
+		        		<label>Gender:</label>	        	
+		        		<select class="form-control item" id="gender">
+			        		<option value="">Gender</option>
+			        		<option value="Female">Female</option>
+			        		<option value="Male">Male</option>
+		        		</select>	        		
+		        	</div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row">
+		        		<label>Mobile Number:</label>
+		        		<input class="form-control item" type="mobile" name="Mobile Number" minlength="10" maxlength="10" id="mobile_number" placeholder="Mobile Number" required="">
+		        	</div>		        	
+		        </div>
+		        <div class="form-group">
+		        	<button class="btn btn-primary btn-block create-account" type="button" onclick="javascript:show_params();">Submit</button>		 
+		        </div>
+		    </form>
+		</div>
+	</div>	
+
+
+	<div id="show_output" style="display: none; text-align: center;width: ">
+		<p>Email Id : <span id="emailid"></span></p>
+		<p>User Name : <span id="username1"></span></p>
+		<p>Password :<span id="password1"></span></p>
+		<p>Confirm Password : <span id="confirm_password1"></span></p>
+		<p>Gender : <span id="gender1"></span></p>
+		<p>Mobile Number : <span id="mobile_number1"></span></p>
+	</div>
+
+	<script type="text/javascript">
+
+    function show_params(){
+      var email=document.getElementById('email').value;
+
+      if(email=='')
+      {
+      	$('#email').focus();
+      	return false;
+      }
+      else
+      {
+      $('#show_output').show('slow');
+      $('#emailid').html(email);
+  	  }
+ 
+      var username=document.getElementById('username').value;
+      if(username=='')
+      {
+      	$('#username').focus();
+      	return false;
+      }
+      else
+      {
+      $('#show_output').show('slow');
+      $('#username1').html(username);
+  	  }
+  
+      var password=document.getElementById('password').value;
+      if(password=='')
+      {
+      	$('#password').focus();
+      	return false;
+      }
+      else
+      {
+      $('#show_output').show('slow');
+      $('#password1').html(password);
+  	  }
+  	  var confirm_password=document.getElementById('confirm_password').value;
+  	  if (confirm_password=='')
+  	   {
+  	   	$('#confirm_password').focus();
+  	   	return false;
+  	   }
+  	   else
+  	   {
+  	   	$('#show_output').show('slow');
+  	   	$('#confirm_password1').html(confirm_password);
+  	   }
+  	   var gender=document.getElementById('gender').value;
+      if(gender=='')
+      {
+      	$('#gender').focus();
+      	return false;
+      }
+      else
+      {
+      $('#show_output').show('slow');
+      $('#gender1').html(gender);
+  	  }
+  	  var mobile_number=document.getElementById('mobile_number').value;
+      if(mobile_number=='')
+      {
+      	$('#mobile_number').focus();
+      	return false;
+      }
+      else
+      {
+      $('#show_output').show('slow');
+      $('#mobile_number1').html(mobile_number);
+  	  }
+    }
+
+	</script>
+
+	<!-- <script>
+		
+		var password = document.getElementById("password").value;
+		var confirm_password = document.getElementById("confirm_password").value;
+		function validatePassword(){
+		  if(password.value != confirm_password.value) {
+		    confirm_password.setCustomValidity("Passwords Don't Match");
+		  } else {
+		    confirm_password.setCustomValidity('');
+		  }
+		
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+		}
+	</script> -->
+</body>
+</html>	
+<!--	<style>
+#main
+{
+width:650px;
+height:550px;
+border:1px solid black;
+margin:auto;
+background:#F3F3F3;
+box-shadow:1px 1px 1px 1px grey;
+}
+#row
+{
+width:99%;
+height:40px;
+border:1px solid #F3F3F3;
+}
+.col
+{
+width:32%;
+height:89%;
+border:1px solid #F3F3F3;
+float:left;
+margin-left:2px;
+}
+input
+{
+height:30px;
+width:200px;
+border-radius:2px;
+}
+input{type=submit}
+{
+width:100px;
+}
+input:hover{border:1px solid red}
+input:hover{background:gray}
+input{font-size:25px}
+.r
+{
+width:10px;
+height:15px;
+font-size:10px;
+}
+</style>
+<script type="text/javascript">
+function chkblnk(eid,errid)
+{
+var x=document.getElementById(eid).value;
+if(x=="")
+{
+document.getElementById(errid).innerHTML="pls fill this field";
+}
+else
+{
+document.getElementById(errid).innerHTML="";
+}
+}
+ 
+function chkAplha(event,err)
+{
+if(!((event.which>=65 && event.which<=90) || (event.which>=97 && event.which<=122) || event.which==0 || event.which==8))
+{
+document.getElementById(err).innerHTML="invalid name format";
+return false;
+}
+}
+ 
+function chkeid()
+{
+var e=document.getElementById("e").value;
+var atpos=e.indexOf("@");
+var dotpos=e.lastIndexOf(".");
+if(atpos<4 || dotpos<atpos+3)
+{
+document.getElementById("error2").innerHTML="invalid email";
+}
+else
+{
+document.getElementById("error2").innerHTML="";
+}
+//alert(atpos+" "+dotpos);
+}
+</script>
+</head>
+<body>
+<div id="main">
+<h5 align="center">Registration Page</h5>
+<div id="row" style="color:black">
+<div class="col">Your First Name</div>
+<div class="col"><input type="text" id="fn"  onkeypress="return chkAplha(event,'error')" onblur="chkblnk('fn','error')"/></div>
+<div class="col" id="error" style="color:red"></div>
+</div>
+<div id="row" style="color:black">
+<div class="col">Your Last Name</div>
+<div class="col"><input type="text" id="ln" onblur="chkblnk('ln','error1')"/></div>
+<div class="col" id="error1" style="color:red"></div>
+</div>
+<div id="row" style="color:black">
+<div class="col">Your Email id</div>
+<div class="col">
+<input type="text" id="e" onblur="chkeid()"/></div>
+<div class="col" id="error2" style="color:red"></div>
+</div>
+<div id="row" style="color:black">
+<div class="col">Your Passord</div>
+<div class="col"><input type="password" id="p"  onblur="chkblnk('p','error3')"/></div>
+<div class="col" id="error3" style="color:red"></div>
+</div>
+<div id="row" style="color:black">
+<div class="col">Conform Pass</div>
+<div class="col"><input type="password" id="cp"  onblur="chkblnk('cp','error4')"/></div>
+<div class="col" style="color:red" id="error4"></div>
+</div>
+<div id="row" style="color:black">
+<div class="col">Your Address</div>
+<div class="col">
+<textarea id="adds" onblur="chkblnk('adds','error5')"></textarea></div>
+<div class="col" style="color:red" id="error5"></div>
+</div>
+ 
+</div>   -->
+
+
+<!--  css for form contol  -->
+<!--
+html {
+  background-color:#214c84;
+  background-blend-mode:overlay;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  height:100%;
+}
+
+body {
+  background-color:transparent;
+}
+
+.registration-form {
+  padding:50px 0;
+}
+
+.registration-form form {
+  max-width:1000px;
+  padding:50px 70px;
+  border-radius:10px;
+  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color:#fff;
+}
+
+.registration-form form h3 {
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.registration-form .item {
+  border-radius:10px;
+  margin-bottom:5px;
+  margin-left: 35px;
+  padding:10px 20px;
+}
+
+.registration-form .create-account {
+  border-radius:30px;
+  padding:10px 20px;
+  font-size:18px;
+  font-weight:bold;
+  background-color:#3f93ff;
+  border:none;
+  color:white;
+  margin-top:20px;
+}
+
+@media (max-width: 576px) {
+  .registration-form form {
+    padding:50px 20px;
+  }
+}
+
+*/
+-->
+
